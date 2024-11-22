@@ -1,32 +1,41 @@
+// Imports
+import { StyleSheet, Text, View } from 'react-native';
 import { Link, Stack } from 'expo-router';
-import { StyleSheet } from 'react-native';
 
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
 
-export default function NotFoundScreen() {
+const NotFoundScreen = () => {
+
+    // Options Object
+    const notFoundScreenOptions: {[variant: string]: string} = {
+        title: "Oops! Not Found",
+    }
+
   return (
     <>
-      <Stack.Screen options={{ title: 'Oops!' }} />
-      <ThemedView style={styles.container}>
-        <ThemedText type="title">This screen doesn't exist.</ThemedText>
-        <Link href="/" style={styles.link}>
-          <ThemedText type="link">Go to home screen!</ThemedText>
-        </Link>
-      </ThemedView>
+    {/* To access the Screen properties like the options object to change the "title" of a Screen Component, we MUST import the <Stack /> Component and wrap everything inside fragments */}
+        <Stack.Screen options={notFoundScreenOptions} />
+        <View style={styles.container} className='px-5'>
+            <Text style={styles.text} className='text-5xl'>* 404 * Error</Text>
+            <Text className="text-xl text-white underline">
+                <Link href={"/"}>Go back to Home screen!</Link>
+            </Text>
+        </View>
     </>
-  );
+  )
 }
 
+export default NotFoundScreen;
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 20,
-  },
-  link: {
-    marginTop: 15,
-    paddingVertical: 15,
-  },
+    container: {
+        flex: 1,
+        gap: 20,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#25292e"
+      },
+      text: {
+        color: "white",
+        textAlign: "center",
+      }
 });
