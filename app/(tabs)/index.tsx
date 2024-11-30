@@ -20,8 +20,8 @@ export default function Index() {
       </View>
 
       <View style={styles.footerContainer}>
-        <Button label={buttonLabelOne}/>
-        <Button label={buttonLabelTwo}/>
+        <Button label={buttonLabelOne} theme="primary"/>
+        <Button label={buttonLabelTwo} />
       </View>
     </View>
   );
@@ -43,8 +43,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   footerContainer: {
-    marginBottom: 25,
     flex: 1 / 3,
     alignItems: "center",
+    gap: 10,
   }
 });
