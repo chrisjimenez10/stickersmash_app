@@ -4,14 +4,24 @@ import { View, StyleSheet } from "react-native";
 import { bgImage } from "@/assets";
 // Components
 import ImageViewer from "@/components/ImageViewer";
+import Button from "@/components/Button";
 
 export default function Index() {
+
+  // Button Label
+  const buttonLabelOne: string = "Choose a photo";
+  const buttonLabelTwo: string = "Use this photo";
 
   return (
     // We can use the "style" prop to pass the styles object we create using the StyleSheet namespace for CSS styling --> NOTE: We can also use NativeWind, which allows us to use Tailwind CSS (We would have to youse Utility Classes with the "className" prop)
     <View style={styles.container} className="px-5">
-      <View>
+      <View style={styles.imageContainer}>
         <ImageViewer imgSource={bgImage}/>
+      </View>
+
+      <View style={styles.footerContainer}>
+        <Button label={buttonLabelOne}/>
+        <Button label={buttonLabelTwo}/>
       </View>
     </View>
   );
@@ -31,5 +41,10 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     flex: 1,
+  },
+  footerContainer: {
+    marginBottom: 25,
+    flex: 1 / 3,
+    alignItems: "center",
   }
 });

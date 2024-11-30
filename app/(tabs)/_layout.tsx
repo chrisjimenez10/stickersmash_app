@@ -23,14 +23,14 @@ export default function TabsLayout() {
 
     // NOTE: This is the "options" object we are passing to the <Tabs> Component, which is the Parent Component of the <Tabs.Screen> Components    
     const tabsScreenOptions = {
-        tabBarActiveTintColor: "#202978",
+        tabBarActiveTintColor: "gold",
         headerStyle: {
-            backgroundColor: "#ffffff",
+            backgroundColor: "#202978",
         },
         headerShadowVisible: false,
-        headerTintColor: "#000000",
+        headerTintColor: "#ffffff",
         tabBarStyle: {
-            backgroundColor: "#ffffff",
+            backgroundColor: "#202978",
         },
     };
 
